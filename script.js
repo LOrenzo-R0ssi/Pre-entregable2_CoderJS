@@ -100,16 +100,16 @@ const actualizarCarrito = () => {
         vaciarCarrito();})
 
     //COMPRAR
-    // const btnFinalizarCompra = document.querySelector("#comprar")
-    // btnFinalizarCompra.addEventListener("click", () =>{
-    //     console.log("Botón de finalizar compra clickeado.");
-    //     if(carrito.length === 0){
-    //         alert("El carrito está vacio")
-    //     } else if(carrito.lenght > 0){
-    //         alert("Su compra ha reslutado exitosa")
-    //         vaciarCarrito()
-    //     }
-    // })
+     const btnFinalizarCompra = document.querySelector("#comprar")
+     btnFinalizarCompra.addEventListener("click", () =>{
+         console.log("Botón de finalizar compra clickeado.");
+         if(carrito.length === 0){
+             alert("El carrito está vacio")
+         } else if(carrito.lenght > 0){
+             alert("Su compra ha reslutado exitosa")
+             vaciarCarrito()
+         }
+     })
 
 
     //SUMA PRECIO

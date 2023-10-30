@@ -110,7 +110,7 @@ h2{
     background-color: rgb(153, 26, 26);
 }
 
-/* #comprar{
+#comprar{
     background-color: #0a74fe;
     padding: 5px 10px;
     color: aliceblue;
@@ -124,7 +124,7 @@ h2{
 
 #comprar:hover{
     background-color: #0c50aa;
-} */
+}
 
 .card-body{
     padding: 0px;

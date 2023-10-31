@@ -45,6 +45,7 @@ const listaProductos = [
 
 
 ]
+
 const container = document.querySelector("#container")
 const contenedorGeneral = document.querySelector("#contenedorProductos")
 const contenedorCarrito = document.querySelector("#contenedorCarrito")
@@ -70,7 +71,14 @@ const vaciarCarrito = () => {
     actualizarCarrito()
 }
 
-
+//FINALIZAR COMPRA
+const finalizarCompra = () => {
+  console.log("Botón de finalizar compra clickeado.");
+  if (carrito.length == 0) {
+  alert("El carrito está vacío");
+  } else {
+  alert("Su compra ha resultado exitosa");
+  vaciarCarrito();}}
 
 
 
@@ -84,7 +92,7 @@ const actualizarCarrito = () => {
       <div class="card-body">
         <h5 class="card-title">${elemento.nombre}</h5>
         <p class="card-text">$${elemento.precio}</p>
-        <a href="#" class="btn-delete" id="delete${index}">Eliminar</a>
+        <button class="btn-delete" id="delete${index}">Eliminar</button>
       </div>
     </div>`
 
@@ -93,24 +101,8 @@ const actualizarCarrito = () => {
     const btnEliminar = document.querySelector(`#delete${index}`)
     btnEliminar.addEventListener("click", () => {
       eliminarProducto(index)})
-  })
-    //VACIAR
-    const btnVaciarCarrito = document.querySelector("#vaciar")
-    btnVaciarCarrito.addEventListener("click", () =>{
-        vaciarCarrito();})
-
-    //COMPRAR
-     const btnFinalizarCompra = document.querySelector("#comprar")
-     btnFinalizarCompra.addEventListener("click", () =>{
-         console.log("Botón de finalizar compra clickeado.");
-         if(carrito.length === 0){
-             alert("El carrito está vacio")
-         } else if(carrito.lenght > 0){
-             alert("Su compra ha reslutado exitosa")
-             vaciarCarrito()
-         }
-     })
-
+    })
+  
 
     //SUMA PRECIO
   precioTotal = carrito.reduce((total, producto) => total + producto.precio, 0)
@@ -119,6 +111,16 @@ const actualizarCarrito = () => {
   contenedorCarrito.appendChild(total)
 }
 
+
+//COMPRAR
+const btnFinalizarCompra = document.querySelector("#comprar")
+btnFinalizarCompra.addEventListener("click", () => {
+   finalizarCompra()})
+
+//VACIAR
+const btnVaciarCarrito = document.querySelector("#vaciar")
+btnVaciarCarrito.addEventListener("click", () =>{
+    vaciarCarrito();})
 
 
 
@@ -131,7 +133,7 @@ const agregarProductosALista = () => {
         <div class="card-body">
           <h5 class="card-title">${producto.nombre}</h5>
           <p class="card-text">$${producto.precio}</p>
-          <a href="#" class="btn" id="agregar${i}">Agregar al carrito</a>
+          <button class="btn" id="agregar${i}">Agregar al carrito</button>
         </div>
       </div>`
 
@@ -142,7 +144,9 @@ const agregarProductosALista = () => {
             agregarCarrito(producto)})
 
     })
+  
 }
 
 agregarProductosALista();
+
 

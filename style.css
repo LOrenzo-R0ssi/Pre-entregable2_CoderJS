@@ -75,6 +75,7 @@ h2{
     color: aliceblue;
     font-weight: 600;
     transition: 0.37s;
+    border: none;
 }
 
 .btn-delete:hover{

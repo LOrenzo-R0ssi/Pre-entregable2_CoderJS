@@ -51,18 +51,48 @@ const contenedorGeneral = document.querySelector("#contenedorProductos")
 const contenedorCarrito = document.querySelector("#contenedorCarrito")
 
 
-// FUNCION PARA AGREGAR UN PRODUCTO AL CARRITO
 let carrito = []
 let precioTotal = 0
 
+// GUARDAR CARRITO (loclStorage)
+const guardarCarritoEnLocalStorage = () => {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// CARGAR CARRITO (localStorage)
+const cargarCarritoDesdeLocalStorage = () => {
+  const carritoGuardado = localStorage.getItem('carrito');
+  if (carritoGuardado) {
+    try {
+      const carritoParseado = JSON.parse(carritoGuardado);
+      
+      if (Array.isArray(carritoParseado)) {
+        carrito = carritoParseado;
+        actualizarCarrito();
+      } else {
+        
+        localStorage.removeItem('carrito');
+      }
+    } catch (error) {
+      
+      localStorage.removeItem('carrito');
+    }
+  }
+}
+
+cargarCarritoDesdeLocalStorage();
+
+// AGREGAR AL CARRITO
 const agregarCarrito = (producto) => {
   carrito.push(producto)
   actualizarCarrito()
+  guardarCarritoEnLocalStorage();
 }
 //ELIMINAR PRODUCTO
 const eliminarProducto = (index) => {
   carrito.splice(index, 1)
   actualizarCarrito()
+  guardarCarritoEnLocalStorage();
 }
 
 //VACIAR CARRITO

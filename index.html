@@ -2,49 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CompraYa!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CompraYa!</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Tostify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>¡Compra Hardware!</h1>
-    <div id="container">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="media/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <!-- offcanvas btn -->
+            <li>
+              <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar" id="btnCarritoOffcanvas">
+                Carrito</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-        <h2>Lista de Productos</h2>
-        <div id="contenedorProductos"></div>
+    </nav>
 
-        <section class="apartado-carrito">
-            <div class="titulo-carrito">
-                <img src="media/carrito.png" alt="" id="img-carrito">
-                <h2>Carrito</h2>
-            </div>
-        
-            <div id="contenedorCarrito"></div>
-            <button id="vaciar">Vaciar carrito</button> 
-            <button id="comprar">Finalizar compra</button>
-        </section>
-       
+  </header>
+  <!-- <h1>¡Compra Hardware!</h1> -->
+  <div id="container">
 
-        
+    <h2>Lista de Productos</h2>
+    <div id="contenedorProductos"></div>
+
+    <section class="apartado-carrito">
+      <div class="titulo-carrito">
+        <img src="media/carrito.png" alt="" id="img-carrito">
+        <h2>Carrito</h2>
+      </div>
+
+      <div id="contenedorCarrito"></div>
+      
+    </section>
+  </div>
+
+  <!-- offcanvas structure -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+    <div class="offcanvas-header">
+      <h3 class="offcanvas-title" id="sidebar-label">Carrito</h3>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    
+    <div class="offcanvas-body" id="offcanvas-body">
+      <p id="total"></p>
+      <button id="vaciar">Vaciar carrito</button>
+      <button id="comprar">Finalizar compra</button>
+    </div>
+  </div>
 
 
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <!-- Tostify -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- Sweet Alert 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 
 </html>

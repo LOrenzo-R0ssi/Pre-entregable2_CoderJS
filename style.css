@@ -1,3 +1,5 @@
+
+
 #container{
     display: flex;
     flex-direction: column;
@@ -49,12 +51,6 @@ h2{
     color: aliceblue;
 }
 
-#contenedorCarrito{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
 
 .apartado-carrito{
     background-color: rgba(4, 37, 146, 0.052);
@@ -62,10 +58,7 @@ h2{
     border-radius: 5px;
 }
 
-#contenedorCarrito .card{
-    padding: 15px;
-    margin: 15px;
-}
+
 
 .btn-delete{
     text-decoration: none;
@@ -147,4 +140,36 @@ h2{
 
 .titulo-carrito h2{
     margin-left: 10px;
+}
+
+/* ESTILOS HTML */
+
+nav img{
+    width: 200px;
+}
+
+
+nav .container-fluid{
+    background-color: #011d3c;
+    
+}
+
+nav .navbar-nav a{
+    color: aliceblue;
+}
+
+
+
+/* .offcanvas-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+} */
+
+.offcanvas-body .card{
+    padding: 7px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 10px -3px rgba(0,0,0,0.2);
 }

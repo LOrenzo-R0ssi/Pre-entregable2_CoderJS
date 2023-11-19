@@ -87,6 +87,20 @@ const agregarCarrito = (producto) => {
   carrito.push(producto)
   actualizarCarrito()
   guardarCarritoEnLocalStorage();
+  Toastify({
+    text: "Producto agregado al carrito correctamente",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+      background: "linear-gradient(to right, #0aaffe, #2155fa)",
+    },
+    onClick: function(){}
+  }).showToast();
 }
 //ELIMINAR PRODUCTO
 const eliminarProducto = (index) => {
@@ -103,22 +117,29 @@ const vaciarCarrito = () => {
 
 //FINALIZAR COMPRA
 const finalizarCompra = () => {
-  console.log("Botón de finalizar compra clickeado.");
   if (carrito.length == 0) {
-  alert("El carrito está vacío");
+  Swal.fire({
+    title: "Carrito vacío",
+    text: "Agrega productos al carrito!",
+    icon: "warning"
+  });
   } else {
-  alert("Su compra ha resultado exitosa");
+    Swal.fire({
+      title: "Genial!",
+      text: "Compra finalizada con exito",
+      icon: "success"
+    });
   vaciarCarrito();}}
 
 
 
 const actualizarCarrito = () => {
-  contenedorCarrito.innerHTML = ""
+  carritoOffcanvas.innerHTML = ""
 
   carrito.forEach((elemento, index) => {
     let listaCarrito = document.createElement("div")
     listaCarrito.innerHTML = `<div class="card" style="width: 18rem;">
-      <img src="${elemento.imagen}" class="card-img-top" alt="...">
+      
       <div class="card-body">
         <h5 class="card-title">${elemento.nombre}</h5>
         <p class="card-text">$${elemento.precio}</p>
@@ -126,7 +147,7 @@ const actualizarCarrito = () => {
       </div>
     </div>`
 
-    contenedorCarrito.appendChild(listaCarrito)
+    carritoOffcanvas.appendChild(listaCarrito)
     //ELIMINAR
     const btnEliminar = document.querySelector(`#delete${index}`)
     btnEliminar.addEventListener("click", () => {
@@ -135,11 +156,10 @@ const actualizarCarrito = () => {
   
 
     //SUMA PRECIO
-  precioTotal = carrito.reduce((total, producto) => total + producto.precio, 0)
-  let total = document.createElement("div");
-  total.innerHTML = `<p id="p-total">El precio total es de $${precioTotal} pesos</p>`
-  contenedorCarrito.appendChild(total)
+    precioTotal = carrito.reduce((acc, producto) => acc + producto.precio, 0)
+    total.textContent = `Total: ${precioTotal}`
 }
+const total = document.querySelector("#total")
 
 
 //COMPRAR
@@ -179,4 +199,5 @@ const agregarProductosALista = () => {
 
 agregarProductosALista();
 
+const carritoOffcanvas = document.querySelector("#offcanvas-body");
 

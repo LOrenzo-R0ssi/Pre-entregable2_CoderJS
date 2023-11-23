@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "nombre": "Ryzen 5 5600G",
+        "precio": 150000,
+        "imagen": "media/ryzen5.jpeg"
+    },
+    {
+        "id": 2,
+        "nombre": "Mother MSI A520M",
+        "precio": 85000,
+        "imagen": "media/motherMsi.png"
+    },
+    {
+        "id": 3,
+        "nombre": "Memoria RAM 8gb",
+        "precio": 22000,
+        "imagen": "media/ram8gb.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "RTX 2060 6gb",
+        "precio": 250000,
+        "imagen": "media/2060.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Intel Core I5-13400F",
+        "precio": 162000,
+        "imagen": "media/intelCore.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "RTX 4090",
+        "precio": 790000,
+        "imagen": "media/4090.png"
+    },
+    {
+        "id": 7,
+        "nombre": "Mother ASUS Z790-E",
+        "precio": 100000,
+        "imagen": "media/motherAsus.png"
+    }
+
+
+]

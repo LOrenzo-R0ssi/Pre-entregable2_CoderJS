@@ -1,60 +1,14 @@
-//LISTA DE PRODUCTOS
-const listaProductos = [
-    {
-        id: 1,
-        nombre: "Ryzen 5 5600G",
-        precio: 150000,
-        imagen: "media/ryzen5.jpeg"
-    },
-    {
-        id: 2,
-        nombre: "Mother MSI A520M",
-        precio: 85000,
-        imagen: "media/motherMsi.png"
-    },
-    {
-        id: 3,
-        nombre: "Memoria RAM 8gb",
-        precio: 22000,
-        imagen: "media/ram8gb.jpg"
-    },
-    {
-        id: 4,
-        nombre: "RTX 2060 6gb",
-        precio: 250000,
-        imagen: "media/2060.jpg"
-    },
-    {
-        id: 5,
-        nombre: "Intel Core I5-13400F",
-        precio: 162000,
-        imagen: "media/intelCore.jpg"
-    },
-    {
-        id: 6,
-        nombre: "RTX 4090",
-        precio: 790000,
-        imagen: "media/4090.png"
-    },
-    {
-        id: 7,
-        nombre: "Mother ASUS Z790-E",
-        precio: 100000,
-        imagen: "media/motherAsus.png"
-    },
-
-
-]
+//E-COMMERCE "COMPRA YA!"
 
 const container = document.querySelector("#container")
 const contenedorGeneral = document.querySelector("#contenedorProductos")
-const contenedorCarrito = document.querySelector("#contenedorCarrito")
+
 
 
 let carrito = []
 let precioTotal = 0
 
-// GUARDAR CARRITO (loclStorage)
+// GUARDAR CARRITO (localStorage)
 const guardarCarritoEnLocalStorage = () => {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
@@ -156,8 +110,12 @@ const actualizarCarrito = () => {
   
 
     //SUMA PRECIO
-    precioTotal = carrito.reduce((acc, producto) => acc + producto.precio, 0)
-    total.textContent = `Total: ${precioTotal}`
+    if (carrito.length > 0){
+      precioTotal = carrito.reduce((acc, producto) => acc + producto.precio, 0)
+      total.textContent = `Total: $${precioTotal}`
+    }else{
+      total.textContent = `Total: 0`
+    }
 }
 const total = document.querySelector("#total")
 
@@ -175,8 +133,11 @@ btnVaciarCarrito.addEventListener("click", () =>{
 
 
 //FUNCION QUE AGREGA PRODUCTOS A LA LISTA DE LOS MISMOS
-const agregarProductosALista = () => {
-    listaProductos.forEach((producto, i) => {
+const agregarProductosALista = async() => {
+  const resp = await fetch('./productos.json')
+  const listaProductos = await resp.json()
+
+  listaProductos.forEach((producto, i) => {
         let contenedorProductos = document.createElement("div")
         contenedorProductos.innerHTML = `<div class="card" style="width: 18rem;">
         <img src="${producto.imagen}" class="card-img-top" alt="...">

@@ -1,5 +1,4 @@
 
-
 #container{
     display: flex;
     flex-direction: column;
@@ -52,13 +51,6 @@ h2{
 }
 
 
-.apartado-carrito{
-    background-color: rgba(4, 37, 146, 0.052);
-    padding: 20px;
-    border-radius: 5px;
-}
-
-
 
 .btn-delete{
     text-decoration: none;
@@ -75,17 +67,11 @@ h2{
     background-color: rgb(153, 26, 26);
 }
 
-#p-total {
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    background-color: #b6d1f9;
-    padding: 10px;
-    border: 2px solid #011d3c;
-    font-size: 20px;
+#total{
+    text-align: center;
+    font-size: 1.2em;
     font-weight: 600;
-    border-radius: 10px;
-  }
+}
 
 #vaciar{
     background-color: rgb(206, 35, 35);
@@ -96,8 +82,7 @@ h2{
     border: none;
     border-radius: 5px;
     transition: 0.4s;
-    margin-bottom: 20px;
-    
+    width: 50%;
 }
 
 #vaciar:hover{
@@ -114,10 +99,18 @@ h2{
     border-radius: 5px;
     transition: 0.4s;
     margin: 10px 0px 20px 0px;
+    width: 50%;
 }
 
 #comprar:hover{
     background-color: #0c50aa;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
 }
 
 .card-body{
@@ -128,19 +121,9 @@ h2{
     width: 150px;
 }
 
-#img-carrito{
-    width: 50px;
-}
 
-.titulo-carrito{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.titulo-carrito h2{
-    margin-left: 10px;
-}
+
 
 /* ESTILOS HTML */
 
@@ -149,24 +132,19 @@ nav img{
 }
 
 
-nav .container-fluid{
-    background-color: #011d3c;
-    
+nav{
+    box-shadow: 0px 4px 29px -12px rgba(3, 23, 56, 0.477);
+    background-color: #0c50aa;
+    margin-bottom: 30px;
 }
 
 nav .navbar-nav a{
     color: aliceblue;
 }
 
-
-
-/* .offcanvas-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+/* #img-carrito{
+    width: 50px;
 } */
-
 .offcanvas-body .card{
     padding: 7px;
     margin-bottom: 15px;

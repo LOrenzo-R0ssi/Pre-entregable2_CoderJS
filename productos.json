@@ -1,19 +1,19 @@
 [
     {
         "id": 1,
-        "nombre": "Ryzen 5 5600G",
+        "nombre": "AMD Ryzen 5 5600G",
         "precio": 150000,
         "imagen": "media/ryzen5.jpeg"
     },
     {
         "id": 2,
-        "nombre": "Mother MSI A520M",
+        "nombre": "Motherboard MSI A520M",
         "precio": 85000,
         "imagen": "media/motherMsi.png"
     },
     {
         "id": 3,
-        "nombre": "Memoria RAM 8gb",
+        "nombre": "Memoria RAM 8gb DDR4",
         "precio": 22000,
         "imagen": "media/ram8gb.jpg"
     },
@@ -37,9 +37,27 @@
     },
     {
         "id": 7,
-        "nombre": "Mother ASUS Z790-E",
+        "nombre": "Motherboard ASUS Z790-E",
         "precio": 100000,
         "imagen": "media/motherAsus.png"
+    },
+    {
+        "id": 8,
+        "nombre": "AMD Ryzen 9 7650X",
+        "precio": 1200000,
+        "imagen": "media/ryzen9.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Intel Core I9-13900K",
+        "precio": 1300000,
+        "imagen": "media/coreI9.webp"
+    },
+    {
+        "id": 10,
+        "nombre": "Gabinete Corsair Icue 4000X",
+        "precio": 100000,
+        "imagen": "media/gabineteCorsair.jpg"
     }
 
 

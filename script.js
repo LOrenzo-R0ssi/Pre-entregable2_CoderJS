@@ -43,9 +43,7 @@ const agregarCarrito = (producto) => {
   guardarCarritoEnLocalStorage();
   Toastify({
     text: "Producto agregado al carrito correctamente",
-    duration: 3000,
-    destination: "https://github.com/apvarun/toastify-js",
-    newWindow: true,
+    duration: 2000,
     close: true,
     gravity: "top",
     position: "right",
@@ -136,6 +134,13 @@ btnVaciarCarrito.addEventListener("click", () =>{
 const agregarProductosALista = async() => {
   const resp = await fetch('./productos.json')
   const listaProductos = await resp.json()
+  .catch(error => {Swal.fire({
+    title: "Oops!",
+    text: "Ha habido un error en el servidor",
+    icon: "error"
+  }, error);
+})
+  
 
   listaProductos.forEach((producto, i) => {
         let contenedorProductos = document.createElement("div")

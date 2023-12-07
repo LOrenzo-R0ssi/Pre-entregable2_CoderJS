@@ -134,8 +134,12 @@ h2{
 nav img{
     width: 200px;
     margin-left: 100px;
+    transition: 0.3s;
 }
 
+nav img:hover{
+    scale: 1.06;
+}
 
 nav{
     box-shadow: 0px 4px 29px -12px rgba(3, 23, 56, 0.477);
@@ -157,4 +161,12 @@ nav .navbar-nav a{
 
 .collapse{
     margin-right: 100px;
+}
+
+.collapse svg{
+    transition: 0.4s;
+}
+
+.collapse svg:hover{
+    transform: translateY(-8px);
 }

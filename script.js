@@ -8,6 +8,7 @@ const contenedorGeneral = document.querySelector("#contenedorProductos")
 let carrito = []
 let precioTotal = 0
 
+
 // GUARDAR CARRITO (localStorage)
 const guardarCarritoEnLocalStorage = () => {
   localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -45,7 +46,7 @@ const agregarCarrito = (producto) => {
     text: "Producto agregado al carrito correctamente",
     duration: 2000,
     close: true,
-    gravity: "top",
+    gravity: "bottom",
     position: "right",
     stopOnFocus: true,
     style: {
@@ -94,7 +95,7 @@ const actualizarCarrito = () => {
       
       <div class="card-body">
         <h5 class="card-title">${elemento.nombre}</h5>
-        <p class="card-text">$${elemento.precio}</p>
+        <p class="card-text">$${elemento.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
         <button class="btn-delete" id="delete${index}">Eliminar</button>
       </div>
     </div>`
@@ -110,7 +111,7 @@ const actualizarCarrito = () => {
     //SUMA PRECIO
     if (carrito.length > 0){
       precioTotal = carrito.reduce((acc, producto) => acc + producto.precio, 0)
-      total.textContent = `Total: $${precioTotal}`
+      total.textContent = `Total: $${precioTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`
     }else{
       total.textContent = `Total: 0`
     }
@@ -148,7 +149,7 @@ const agregarProductosALista = async() => {
         <img src="${producto.imagen}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${producto.nombre}</h5>
-          <p class="card-text">$${producto.precio}</p>
+          <p class="card-text">$${producto.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</p>
           <button class="btn" id="agregar${i}">Agregar al carrito</button>
         </div>
       </div>`
